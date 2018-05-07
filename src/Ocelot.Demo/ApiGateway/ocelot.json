@@ -1,0 +1,59 @@
+﻿{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/products",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/products",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": true,
+        "UseCookieContainer": false,
+        "UseTracing": true
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/api/users",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/users",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ],
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": true,
+        "UseCookieContainer": false,
+        "UseTracing": true
+      }
+    },
+    {
+      "DownstreamPathTemplate": "/{everything}",
+      "DownstreamScheme": "http",
+      "UpstreamPathTemplate": "/api/mvc/{everything}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8803
+        }
+      ],
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": true,
+        "UseCookieContainer": false,
+        "UseTracing": true
+      }
+    }
+  ],
+
+  "GlobalConfiguration": {
+    "RequestIdKey": "ot-traceid"
+  }
+}
