@@ -18,6 +18,7 @@
     "forin": true,
     "import-blacklist": [
       true,
+      "rxjs",
       "rxjs/Rx"
     ],
     "import-spacing": true,
@@ -115,6 +116,18 @@
       "check-operator",
       "check-separator",
       "check-type"
+    ],
+    "directive-selector": [
+      true,
+      "attribute",
+      "oc",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "oc",
+      "kebab-case"
     ],
     "no-output-on-prefix": true,
     "use-input-property-decorator": true,

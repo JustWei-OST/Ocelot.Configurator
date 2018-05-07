@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2043
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{77CD7B81-5F05-4784-8589-F8B049CA3C94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiGateway", "Ocelot.Demo\ApiGateway\ApiGateway.csproj", "{77CD7B81-5F05-4784-8589-F8B049CA3C94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Product", "Api.Product\Api.Product.csproj", "{7C6F96FE-0ED5-4A93-B2DB-C59746F08B55}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Product", "Ocelot.Demo\Api.Product\Api.Product.csproj", "{7C6F96FE-0ED5-4A93-B2DB-C59746F08B55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.User", "Api.User\Api.User.csproj", "{5313BEA9-9DC0-4010-9870-CB6038229CD7}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Servfices", "Servfices", "{152B83ED-C5C6-468D-854B-9A3887D4DE90}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.User", "Ocelot.Demo\Api.User\Api.User.csproj", "{5313BEA9-9DC0-4010-9870-CB6038229CD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,10 +30,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{7C6F96FE-0ED5-4A93-B2DB-C59746F08B55} = {152B83ED-C5C6-468D-854B-9A3887D4DE90}
-		{5313BEA9-9DC0-4010-9870-CB6038229CD7} = {152B83ED-C5C6-468D-854B-9A3887D4DE90}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B0C7ACE6-BC90-4021-9EB6-AAD528766CD4}
