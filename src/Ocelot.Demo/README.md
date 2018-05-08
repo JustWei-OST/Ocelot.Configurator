@@ -20,7 +20,7 @@
 分别访问以下URL:
 
 - http://localhost:5000/api/users
-- http://localhost:5000/api/users
+- http://localhost:5000/api/products
 
 Administration基地址
 http://localhost:5000/administration
