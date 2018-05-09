@@ -13,6 +13,8 @@ export class ConfigureEditorComponent implements OnInit {
   server: Server;
   config: any;
 
+  configStr: string;
+
   constructor(
     private serverSev: ServerService,
     private router: Router,
@@ -22,10 +24,24 @@ export class ConfigureEditorComponent implements OnInit {
 
   ngOnInit() {
     this.serverAlias = this.route.snapshot.paramMap.get('ServerAlias');
-    console.log(this.serverAlias);
     this.server = this.serverSev.getServer(this.serverAlias);
 
-    this.serverSev.loadServerConfig(this.server).then(p => this.config = p);
+    this.serverSev.loadServerConfig(this.server).then(p => {
+      this.config = p
+      this.initEditor();
+    });
   }
 
+  initEditor() {
+    this.configStr = JSON.stringify(this.config, null, 2)
+  }
+
+  onConfigChange(evt) {
+    try {
+      this.config = JSON.parse(evt);
+    } catch (e) {
+      //TODO:
+      console.error(e)
+    }
+  }
 }
