@@ -20,3 +20,12 @@
 如果对项目有什么疑问或建议，欢迎Issues.
 
 欢迎PR.
+
+### 截图
+![](https://raw.githubusercontent.com/JustWei-OST/Ocelot.Configurator/master/screenshot/home.PNG)
+
+![](https://raw.githubusercontent.com/JustWei-OST/Ocelot.Configurator/master/screenshot/configure.PNG)
+
+![](https://raw.githubusercontent.com/JustWei-OST/Ocelot.Configurator/master/screenshot/add-server.PNG)
+
+![](https://raw.githubusercontent.com/JustWei-OST/Ocelot.Configurator/master/screenshot/configure-editor.PNG)
