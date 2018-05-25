@@ -20,6 +20,7 @@ export class CodeEditorComponent implements ControlValueAccessor {
   onModelTouched: Function = () => { };
 
   inputValue: string;
+  isDisabled: false;
 
   constructor() { }
 

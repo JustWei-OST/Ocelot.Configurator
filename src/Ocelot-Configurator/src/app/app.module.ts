@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { NgZorroAntdModule, NzGridModule } from 'ng-zorro-antd';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -26,7 +26,7 @@ const jwtConfig: JwtModuleOptions = {
   config: {
     skipWhenExpired: false,
     tokenGetter: getJwtToken,
-    whitelistedDomains: ['localhost:5000']
+    whitelistedDomains: ['localhost:5000', 'api.justwei.com', 'jeams.justwei.com']
   }
 }
 
@@ -41,8 +41,6 @@ const jwtConfig: JwtModuleOptions = {
     BrowserAnimationsModule,
     NgZorroAntdModule.forRoot(),
     JwtModule.forRoot(jwtConfig),
-
-    NzGridModule,
 
     AppRoutingModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
