@@ -98,6 +98,15 @@
         <nz-form-explain *ngIf="validateForm.get('AdministrationApiPath').dirty && validateForm.get('AdministrationApiPath').errors">Please input Administration Path!</nz-form-explain>
       </nz-form-control>
     </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="isHorizontal? 4:null">Secret</nz-form-label>
+      <nz-form-control [nzSpan]="isHorizontal? 14:null">
+        <input nz-input formControlName="ClientSecret" placeholder="管理密码">
+        <nz-form-explain *ngIf="validateForm.get('ClientSecret').dirty && validateForm.get('ClientSecret').errors">Please input ClientSecret!</nz-form-explain>
+      </nz-form-control>
+    </nz-form-item>
+
   </form>
 
   <ng-template #modalFooter>

@@ -87,34 +87,37 @@ export class ServerService {
    * 登陆到服务器
    * @param model
    */
-  login(model: LoginModel) {
-    if (model && model.Server) {
-      const server = model.Server;
-      const url = server.Scheme + '://' + server.Host + (server.Port != 80 ? (':' + server.Port) : '')
-        + server.AdministrationApiPath + '/connect/token';
+  login(model: LoginModel): Promise<boolean> {
+    return new Promise((resolve, reject) => {
+      localStorage.removeItem('JwtToken');
 
-      let formData = new FormData();
-      formData.append('client_id', model.Client_Id);
-      formData.append('client_secret', model.Client_Secret);
-      formData.append('grant_type', server.GrantType);
+      if (model && model.Server) {
+        const server = model.Server;
+        const url = server.Scheme + '://' + server.Host + (server.Port != 80 ? (':' + server.Port) : '')
+          + server.AdministrationApiPath + '/connect/token';
 
-      this.http.post(url, formData).toPromise()
-        .then(p => {
-          if (p) {
-            let jwtToken = p['access_token'];
-            if (jwtToken) {
-              localStorage.setItem('JwtToken', jwtToken);
-            } else {
-              //TODO:
-              alert('获取Token失败');
+        let formData = new FormData();
+        formData.append('client_id', model.Client_Id);
+        formData.append('client_secret', model.Client_Secret);
+        formData.append('grant_type', server.GrantType);
+
+        this.http.post(url, formData).toPromise()
+          .then(p => {
+            if (p) {
+              let jwtToken = p['access_token'];
+              if (jwtToken) {
+                localStorage.setItem('JwtToken', jwtToken);
+                resolve(true);
+                return;
+              }
             }
-          }
-          console.log(p);
-        })
-        .catch(err => {
-          console.log(err);
-        });
-    }
+            resolve(false);
+          })
+          .catch(err => {
+            resolve(false);
+          });
+      }
+    });
   }
 
   /**

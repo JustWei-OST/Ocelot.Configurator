@@ -34,6 +34,7 @@ export class ConfigureComponent implements OnInit {
       Alias: [null, [Validators.required]],
       Host: [null, [Validators.required]],
       Port: [80, [Validators.required]],
+      ClientSecret: [null, [Validators.required]],
       AdministrationApiPath: [null, [Validators.required]]
     });
   }
@@ -46,11 +47,19 @@ export class ConfigureComponent implements OnInit {
     //alert(server.Alias);
     this.serverSev.login({
       Client_Id: 'admin',
-      Client_Secret: 'secret',
+      Client_Secret: server.ClientSecret,
       Server: server
-    });
+    }).then(
+      res => {
+        if (res) {
+          this.router.navigate(['/configure/editor', { ServerAlias: server.Alias }]);
 
-    this.router.navigate(['/configure/editor', { ServerAlias: server.Alias}]);
+        } else {
+          alert('登陆失败');
+        }
+      }
+    );
+
 
   }
   /**

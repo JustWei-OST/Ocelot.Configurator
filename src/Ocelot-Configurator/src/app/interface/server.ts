@@ -8,4 +8,5 @@ interface Server {
   GrantType?: string;
   /** Administration Api路径*/
   AdministrationApiPath?: string;
+  ClientSecret?: string;
 }
