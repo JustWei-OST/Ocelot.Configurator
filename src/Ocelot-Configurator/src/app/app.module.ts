@@ -1,33 +1,26 @@
+import { NgModule, LOCALE_ID, APP_INITIALIZER, Injector } from '@angular/core';
+import { HttpClient, HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { NgZorroAntdModule, NzGridModule } from 'ng-zorro-antd';
-
-import { AppRoutingModule } from './app-routing.module';
-
-import { ServiceWorkerModule } from '@angular/service-worker';
+import { DelonModule } from './delon.module';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
+import { RoutesModule } from './routes/routes.module';
+import { LayoutModule } from './layout/layout.module';
+import { StartupService } from '@core/startup/startup.service';
+import { DefaultInterceptor } from '@core/net/default.interceptor';
+import { SimpleInterceptor } from '@delon/auth';
+// angular i18n
+import { registerLocaleData } from '@angular/common';
+import localeZhHans from '@angular/common/locales/zh-Hans';
+registerLocaleData(localeZhHans);
 
-import { environment } from '../environments/environment';
-import { ServerService } from './shared/server.service';
-import { JwtModuleOptions, JwtModule } from './shared/lib/angular2-jwt/index';
+// @delon/form: JSON Schema form
+import { JsonSchemaModule } from '@shared/json-schema/json-schema.module';
 
-/**
- * 获取当前存储的jwtToken
- * 此处用导出函数,是为修复Bug,参考:https://github.com/auth0/angular2-jwt/issues/451
- */
-export function getJwtToken() {
-  return localStorage.getItem('JwtToken')
-}
-const jwtConfig: JwtModuleOptions = {
-  config: {
-    skipWhenExpired: false,
-    tokenGetter: getJwtToken,
-    whitelistedDomains: ['localhost:5000']
-  }
+export function StartupServiceFactory(startupService: StartupService): Function {
+  return () => startupService.load();
 }
 
 @NgModule({
@@ -36,20 +29,27 @@ const jwtConfig: JwtModuleOptions = {
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpClientModule,
     BrowserAnimationsModule,
-    NgZorroAntdModule.forRoot(),
-    JwtModule.forRoot(jwtConfig),
-
-    NzGridModule,
-
-    AppRoutingModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+    HttpClientModule,
+    DelonModule.forRoot(),
+    CoreModule,
+    SharedModule,
+    LayoutModule,
+    RoutesModule,
+    // JSON-Schema form
+    JsonSchemaModule
   ],
   providers: [
-    { provide: LocationStrategy, useClass: HashLocationStrategy },
-    ServerService,
+    { provide: LOCALE_ID, useValue: 'zh-Hans' },
+    { provide: HTTP_INTERCEPTORS, useClass: SimpleInterceptor, multi: true},
+    { provide: HTTP_INTERCEPTORS, useClass: DefaultInterceptor, multi: true},
+    StartupService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: StartupServiceFactory,
+      deps: [StartupService],
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

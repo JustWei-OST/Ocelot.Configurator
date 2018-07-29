@@ -1,0 +1,37 @@
+
+<nz-row nzGutter="8" nzType="flex" nzAlign="top">
+  <nz-col nzSpan="16">
+    <div *ngIf="config">
+
+      <nz-tabset>
+        <nz-tab nzTitle="reRoutes">
+          <nz-collapse>
+            <nz-collapse-panel *ngFor="let reRoute of config.reRoutes" [nzHeader]="reRoute.upstreamPathTemplate">
+              <div>
+                downstreamPathTemplate: {{reRoute.downstreamPathTemplate}}
+              </div>
+            </nz-collapse-panel>
+          </nz-collapse>
+
+        </nz-tab>
+
+        <nz-tab nzTitle="aggregates">
+
+
+        </nz-tab>
+        <nz-tab nzTitle="globalConfiguration">
+
+
+        </nz-tab>
+      </nz-tabset>
+    </div>
+  </nz-col>
+
+  <nz-col nzSpan="8">
+    <p>完整配置：</p>
+
+    <textarea [(ngModel)]="configStr" (onChange)="onConfigChange($event)"></textarea>
+  </nz-col>
+
+</nz-row>
+
