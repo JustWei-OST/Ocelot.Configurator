@@ -1,29 +1,29 @@
 # Ocelot.Configurator
-[Ocelot](https://github.com/ThreeMammals/Ocelot) µÄ **Ô¶³Ì** ÅäÖÃ¹¤¾ß¡£
+[Ocelot](https://github.com/ThreeMammals/Ocelot) çš„ **è¿œç¨‹** é…ç½®å·¥å…·ã€‚
 
-ÏîÄ¿ÖĞ´øÓĞÒ»¸öOcelotµÄ»ù±¾ºó¶Ë [Demo](https://github.com/JustWei-OST/Ocelot.Configurator/tree/master/src/Ocelot.Demo) .
+é¡¹ç›®ä¸­å¸¦æœ‰ä¸€ä¸ªOcelotçš„åŸºæœ¬åç«¯ [Demo](https://github.com/JustWei-OST/Ocelot.Configurator/tree/master/src/Ocelot.Demo) .
 
-#### Ê¹ÓÃ·½·¨
+#### ä½¿ç”¨æ–¹æ³•
 
-- 1¡£¿ËÂ¡±¾²Ö¿â
-- 2¡£´ò¿ªÃüÁîĞĞ¹¤¾ß
-- 3¡£$ cd src/Ocelot-Configurator
-- 4¡£ $ npm install
-- 5¡£ $ npm start
-- 6¡£ä¯ÀÀÆ÷·ÃÎÊ£º http://localhost:4200
+- 1ã€‚å…‹éš†æœ¬ä»“åº“
+- 2ã€‚æ‰“å¼€å‘½ä»¤è¡Œå·¥å…·
+- 3ã€‚$ cd src/Ocelot-Configurator
+- 4ã€‚ $ npm install
+- 5ã€‚ $ npm start
+- 6ã€‚æµè§ˆå™¨è®¿é—®ï¼š http://localhost:4200
 
-#### »òÕßÖ±½ÓÊ¹ÓÃÏßÉÏ [¾²Ì¬ÍøÕ¾](https://justwei-ost.github.io/Ocelot.Configurator)
+#### æˆ–è€…ç›´æ¥ä½¿ç”¨çº¿ä¸Š [é™æ€ç½‘ç«™](https://justwei-ost.github.io/Ocelot.Configurator)
 
-#### ËµÃ÷
-±¾ÈËÊÇ²Å¿ªÊ¼½Ó´¥Ocelot£¬±¾ÏîÄ¿»ùÓÚ×Ô¼º¶ÔOcelotÓĞÏŞÀí½âÉÏµÄ³óÂªÊµÏÖ¡£
+#### è¯´æ˜
+æœ¬äººæ˜¯æ‰å¼€å§‹æ¥è§¦Ocelotï¼Œæœ¬é¡¹ç›®åŸºäºè‡ªå·±å¯¹Ocelotæœ‰é™ç†è§£ä¸Šçš„ä¸‘é™‹å®ç°ã€‚
 
-! * ÇëÎğÓÃÓÚÉú²ú»·¾³¡£
+! * è¯·å‹¿ç”¨äºç”Ÿäº§ç¯å¢ƒã€‚
 
-Èç¹û¶ÔÏîÄ¿ÓĞÊ²Ã´ÒÉÎÊ»ò½¨Òé£¬»¶Ó­Issues.
+å¦‚æœå¯¹é¡¹ç›®æœ‰ä»€ä¹ˆç–‘é—®æˆ–å»ºè®®ï¼Œæ¬¢è¿Issues.
 
-»¶Ó­PR.
+æ¬¢è¿PR.
 
-### ½ØÍ¼
+### æˆªå›¾
 ![](https://raw.githubusercontent.com/JustWei-OST/Ocelot.Configurator/master/screenshot/home.PNG)
 
 ![](https://raw.githubusercontent.com/JustWei-OST/Ocelot.Configurator/master/screenshot/configure.PNG)
