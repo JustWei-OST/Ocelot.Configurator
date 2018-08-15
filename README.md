@@ -12,6 +12,8 @@
 - 5。 $ npm start
 - 6。浏览器访问： http://localhost:4200
 
+#### 或者直接使用线上 [静态网站](https://justwei-ost.github.io/Ocelot.Configurator)
+
 #### 说明
 本人是才开始接触Ocelot，本项目基于自己对Ocelot有限理解上的丑陋实现。
 

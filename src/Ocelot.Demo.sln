@@ -4,10 +4,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.27428.2043
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiGateway", "Ocelot.Demo\ApiGateway\ApiGateway.csproj", "{77CD7B81-5F05-4784-8589-F8B049CA3C94}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5313BEA9-9DC0-4010-9870-CB6038229CD7} = {5313BEA9-9DC0-4010-9870-CB6038229CD7}
+		{7C6F96FE-0ED5-4A93-B2DB-C59746F08B55} = {7C6F96FE-0ED5-4A93-B2DB-C59746F08B55}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Product", "Ocelot.Demo\Api.Product\Api.Product.csproj", "{7C6F96FE-0ED5-4A93-B2DB-C59746F08B55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Product", "Ocelot.Demo\Api.Product\Api.Product.csproj", "{7C6F96FE-0ED5-4A93-B2DB-C59746F08B55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.User", "Ocelot.Demo\Api.User\Api.User.csproj", "{5313BEA9-9DC0-4010-9870-CB6038229CD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.User", "Ocelot.Demo\Api.User\Api.User.csproj", "{5313BEA9-9DC0-4010-9870-CB6038229CD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

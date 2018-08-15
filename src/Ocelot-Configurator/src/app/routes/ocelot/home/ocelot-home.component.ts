@@ -51,7 +51,7 @@ export class OcelotHomeComponent implements OnInit {
     }).then(
       res => {
         if (res) {
-          this.router.navigate(['/configure/editor', { ServerAlias: server.Alias }]);
+          this.router.navigate(['/ocelot/editor', { ServerAlias: server.Alias }]);
 
         } else {
           alert('登陆失败');

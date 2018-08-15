@@ -80,55 +80,52 @@ export class StartupService {
     // 初始化菜单
     this.menuService.add([
       {
-        text: '主导航',
+        text: 'XX系统',
         group: true,
         children: [
-          {
-            text: '首页',
-            link: '/',
-            icon: 'anticon anticon-appstore-o'
-          },
           {
             text: '工作台',
             link: '/dashboard',
             icon: 'anticon anticon-appstore-o'
           },
           {
-            text: 'Ocelot',
-            link: '/ocelot',
-            icon: 'anticon anticon-appstore-o'
+            text: 'Ocelot网关管理',
+            icon: 'anticon anticon-appstore-o',
+            children: [
+              {
+                text: '服务器列表',
+                link: '/ocelot',
+                icon: 'anticon anticon-appstore-o'
+              },
+            ]
           },
-          //{
-          //  text: '快捷菜1单',
-          //  icon: 'anticon anticon-rocket',
-          //  shortcut_root: true
-          //}
+          {
+            text: 'Ocelot学习资源',
+            icon: 'anticon anticon-appstore-o',
+            children: [
+              {
+                text: 'Ocelot Github',
+                externalLink: 'https://github.com/ThreeMammals/Ocelot',
+                icon: 'anticon anticon-appstore-o',
+                target: '_blank'
+              },
+              {
+                text: 'Ocelot Doc',
+                externalLink: 'http://ocelot.readthedocs.io',
+                icon: 'anticon anticon-appstore-o',
+                target: '_blank'
+              },
+              {
+                text: 'Ocelot.Configurator Github',
+                externalLink: 'https://github.com/JustWei-OST/Ocelot.Configurator',
+                icon: 'anticon anticon-appstore-o',
+                target: '_blank'
+              },
+            ]
+          }
         ]
       },
-      {
-        text: '学习资源',
-        group: true,
-        children: [
-          {
-            text: 'Ocelot Github',
-            externalLink: 'https://github.com/ThreeMammals/Ocelot',
-            icon: 'anticon anticon-appstore-o',
-            target: '_blank'
-          },
-          {
-            text: 'Ocelot Doc',
-            externalLink: 'http://ocelot.readthedocs.io',
-            icon: 'anticon anticon-appstore-o',
-            target: '_blank'
-          },
-          {
-            text: 'Ocelot.Configurator Github',
-            externalLink: 'https://github.com/JustWei-OST/Ocelot.Configurator',
-            icon: 'anticon anticon-appstore-o',
-            target: '_blank'
-          },
-        ]
-      }
+      
 
     ]);
     // 设置页面标题的后缀

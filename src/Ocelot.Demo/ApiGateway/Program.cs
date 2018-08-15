@@ -53,15 +53,6 @@ namespace ApiGateway
                     });
 
                    s.AddOcelot()
-                   .AddCacheManager(x =>
-                    {
-                        x.WithDictionaryHandle();
-                    })
-                   .AddOpenTracing(option =>
-                   {
-                       option.CollectorUrl = "http://localhost:9618";
-                       option.Service = "Ocelot.ManualTest";
-                   })
                    .AddAdministration("/administration", "secret");
                })
                .ConfigureLogging((hostingContext, logging) =>

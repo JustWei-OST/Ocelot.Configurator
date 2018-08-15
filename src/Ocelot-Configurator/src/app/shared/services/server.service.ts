@@ -1,12 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { TokenService, DA_SERVICE_TOKEN } from '@delon/auth';
 
 @Injectable()
 export class ServerService {
 
   servers: Server[] = [];
 
-  constructor(private http: HttpClient) {
+  constructor(
+    @Inject(DA_SERVICE_TOKEN) private tokenService: TokenService,
+    private http: HttpClient) {
     this.loadServers();
   }
 
@@ -106,7 +109,14 @@ export class ServerService {
             if (p) {
               let jwtToken = p['access_token'];
               if (jwtToken) {
-                localStorage.setItem('JwtToken', jwtToken);
+                //localStorage.setItem('JwtToken', jwtToken);
+
+                this.tokenService.set({
+                  token: jwtToken,
+                  host: server.Scheme + '://' + server.Host + (server.Port != 80 ? (':' + server.Port) : ''),
+                  time: +new Date(),
+                });
+
                 resolve(true);
                 return;
               }
